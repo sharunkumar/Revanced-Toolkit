@@ -52,7 +52,7 @@ function Get-LogPatch($patches) {
         
         return $_.compatiblePackages | ForEach-Object {
             $package = $_
-            return ($package.name -split "\." | Select-Object -Last 1) + ": " + $me.name + " " + ($package.versions | Sort-Object -Descending | Select-Object -First 1)
+            return ($package.name) + ": " + $me.name + " " + ($package.versions | Sort-Object -Descending | Select-Object -First 1)
         }
     } | Sort-Object
 }
