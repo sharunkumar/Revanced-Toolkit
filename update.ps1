@@ -3,7 +3,6 @@
 
 # load the curent patches
 $old_patches = Get-Content .\revanced\patches.json | ConvertFrom-Json
-# $patch_names = $old_patches | ForEach-Object { $_.name }
 
 # get latest release for https://github.com/revanced/revanced-cli
 $cli = Invoke-RestMethod -Uri "https://api.github.com/repos/revanced/revanced-cli/releases/latest"
