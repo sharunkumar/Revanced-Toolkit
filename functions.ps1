@@ -1,3 +1,10 @@
+function Get-AssetFile($url, $pattern, $fileName) {
+    $release = Invoke-RestMethod -Uri $url
+    Get-LatestAsset $release $pattern | ForEach-Object {
+        Invoke-WebRequest -Uri $_.url -OutFile $fileName
+    }
+}
+
 function Get-LatestAsset($release, $name_filter) {
     $asset = $release.assets | Where-Object { $_.name -like $name_filter }
     if ($asset) {
