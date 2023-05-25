@@ -1,0 +1,46 @@
+[ {
+  "patchName" : "change-package-name",
+  "options" : [ {
+    "key" : "packageName",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "custom-branding",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "YouTube ReVanced"
+  }, {
+    "key" : "iconPath",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "enable-android-debugging",
+  "options" : [ {
+    "key" : "debuggable",
+    "value" : false
+  } ]
+}, {
+  "patchName" : "spotify-theme",
+  "options" : [ {
+    "key" : "backgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "accentColor",
+    "value" : "#ff1ed760"
+  }, {
+    "key" : "accentPressedColor",
+    "value" : "#ff169c46"
+  } ]
+}, {
+  "patchName" : "theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
+  }, {
+    "key" : "splashScreenBackgroundColor",
+    "value" : "@android:color/black"
+  } ]
+} ]
