@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory = $true)] [ValidateSet("youtube", "tiktok", "kik", "twitter", "memegenerator", "backdrops")] [string] $AppName,
+    [Parameter(Mandatory = $true)] [ValidateSet("youtube", "tiktok", "kik", "twitter", "memegenerator", "backdrops", "vsco")] [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
     [Parameter()] [string[]] $Excludes = @()
 )
