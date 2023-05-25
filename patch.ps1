@@ -1,6 +1,10 @@
 [CmdletBinding()]
 param (
     [Parameter(Mandatory = $true)]
+    [ValidateScript(
+        { $_ -in (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" }) },
+        ErrorMessage = 'invalid app name. make sure the apk in in the .\apk folder'
+    )]
     [ArgumentCompleter(
         {
             param($cmd, $param, $wordToComplete)
