@@ -16,6 +16,7 @@ param (
     [string] $AppId,
     [Parameter()] [switch] $PlayStore,
     [Parameter()] [switch] $ApkMirror,
+    [Parameter()] [switch] $ApkPure,
     [Parameter()] [switch] $Versions,
     [Parameter()] [switch] $VersionAgnostic,
     [Parameter()] [switch] $Raw
@@ -31,6 +32,10 @@ if ($PlayStore) {
 
 if ($ApkMirror) {
     return Start-Process "https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=$AppId"
+}
+
+if ($ApkPure) {
+    return Start-Process "https://apkpure.com/search?q=$AppId"
 }
 
 $result = Get-Content .\revanced\patches.json | ConvertFrom-Json | Where-Object { $_.compatiblePackages.name -eq $AppId }
