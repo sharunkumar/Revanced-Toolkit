@@ -15,10 +15,16 @@ param (
     )]
     [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
-    [Parameter()] [string[]] $Excludes = @()
+    [Parameter()] [string[]] $Excludes = @(),
+    [Parameter()] [switch] $Install,
+    [Parameter()] [int] $ForUser = 0
 )
 
 $includesParam = ($Includes | ForEach-Object { "--include=$_" })
 $excludesParam = ($Excludes | ForEach-Object { "--exclude=$_" })
 
 java.exe -jar .\revanced\revanced-cli.jar -a ".\apk\$AppName.apk" -c -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore --temp-dir="$env:TEMP\Revanced" $includesParam $excludesParam
+
+if ($Install) {
+    adb.exe install --user $ForUser ".\apk\$AppName-patched.apk"
+}
