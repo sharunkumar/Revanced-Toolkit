@@ -1,6 +1,15 @@
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory = $true)] [ValidateSet("youtube", "tiktok", "kik", "twitter", "memegenerator", "backdrops", "vsco")] [string] $AppName,
+    [Parameter(Mandatory = $true)]
+    [ArgumentCompleter(
+        {
+            param($cmd, $param, $wordToComplete)
+            # This is the duplicated part of the code in the [ValidateScipt] attribute.
+            [array] $validValues = (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" })
+            $validValues -like "*$wordToComplete*"
+        }
+    )]
+    [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
     [Parameter()] [string[]] $Excludes = @()
 )
