@@ -5,15 +5,11 @@ param (
         { $_ -in (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" }) },
         ErrorMessage = 'invalid app name. make sure the apk in in the .\apk folder'
     )]
-    [ArgumentCompleter(
-        {
-            param($cmd, $param, $wordToComplete)
+    [ArgumentCompleter({ param($cmd, $param, $wordToComplete)
             # This is the duplicated part of the code in the [ValidateScipt] attribute.
             [array] $validValues = (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" })
             $validValues -like "*$wordToComplete*"
-        }
-    )]
-    [string] $AppName,
+        })] [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
     [Parameter()] [string[]] $Excludes = @(),
     [Parameter()] [switch] $Install,

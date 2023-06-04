@@ -5,15 +5,11 @@ param (
         { $_ -in (Get-Content .\revanced\patches.json | ConvertFrom-Json | ForEach-Object { $_.compatiblePackages.name } | Sort-Object | Get-Unique) },
         ErrorMessage = 'invalid app id / app not compatible with revanced'
     )]
-    [ArgumentCompleter(
-        {
-            param($cmd, $param, $wordToComplete)
+    [ArgumentCompleter({ param($cmd, $param, $wordToComplete)
             # This is the duplicated part of the code in the [ValidateScipt] attribute.
             [array] $validValues = (Get-Content .\revanced\patches.json | ConvertFrom-Json | ForEach-Object { $_.compatiblePackages.name } | Sort-Object | Get-Unique)
             $validValues -like "*$wordToComplete*"
-        }
-    )]
-    [string] $AppId,
+        })] [string] $AppId,
     [Parameter()] [switch] $PlayStore,
     [Parameter()] [switch] $ApkMirror,
     [Parameter()] [switch] $ApkPure,
