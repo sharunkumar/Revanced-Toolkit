@@ -19,7 +19,7 @@ param (
 $includesParam = ($Includes | ForEach-Object { "--include=$_" })
 $excludesParam = ($Excludes | ForEach-Object { "--exclude=$_" })
 
-java.exe -jar .\revanced\revanced-cli.jar -a ".\apk\$AppName.apk" -c -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore --temp-dir="$env:TEMP\Revanced" $includesParam $excludesParam
+java.exe -jar .\revanced\revanced-cli.jar patch -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore -r "$env:TEMP\Revanced" $includesParam $excludesParam ".\apk\$AppName.apk"
 
 if ($Install) {
     adb.exe install --user $ForUser ".\apk\$AppName-patched.apk"
