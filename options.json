@@ -49,10 +49,13 @@
     "key" : "backgroundColor",
     "value" : "@android:color/black"
   }, {
+    "key" : "backgroundColorSecondary",
+    "value" : "#ff282828"
+  }, {
     "key" : "accentColor",
     "value" : "#ff1ed760"
   }, {
-    "key" : "accentPressedColor",
+    "key" : "accentColorPressed",
     "value" : "#ff169c46"
   } ]
 } ]

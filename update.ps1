@@ -22,3 +22,6 @@ Compare-Object -ReferenceObject (Get-LogPatch($old_patches)) -DifferenceObject (
         Write-Host $_.InputObject -ForegroundColor Green
     }
 }
+
+# update options
+. .\options.ps1
