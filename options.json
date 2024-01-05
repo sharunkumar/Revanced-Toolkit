@@ -1,4 +1,10 @@
 [ {
+  "patchName" : "GmsCore support",
+  "options" : [ {
+    "key" : "gmsCoreVendor",
+    "value" : "com.mgoogle"
+  } ]
+}, {
   "patchName" : "Spoof SIM country",
   "options" : [ {
     "key" : "networkCountryIso",
@@ -14,6 +20,15 @@
     "value" : "Default"
   } ]
 }, {
+  "patchName" : "Theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
+  } ]
+}, {
   "patchName" : "Custom branding",
   "options" : [ {
     "key" : "appName",
@@ -27,15 +42,6 @@
   "options" : [ {
     "key" : "usePremiumHeading",
     "value" : true
-  } ]
-}, {
-  "patchName" : "Theme",
-  "options" : [ {
-    "key" : "darkThemeBackgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "lightThemeBackgroundColor",
-    "value" : "@android:color/white"
   } ]
 }, {
   "patchName" : "Spoof client",
