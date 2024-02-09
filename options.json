@@ -5,30 +5,6 @@
     "value" : "com.mgoogle"
   } ]
 }, {
-  "patchName" : "Spoof SIM country",
-  "options" : [ {
-    "key" : "networkCountryIso",
-    "value" : null
-  }, {
-    "key" : "simCountryIso",
-    "value" : null
-  } ]
-}, {
-  "patchName" : "Change package name",
-  "options" : [ {
-    "key" : "packageName",
-    "value" : "Default"
-  } ]
-}, {
-  "patchName" : "Theme",
-  "options" : [ {
-    "key" : "darkThemeBackgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "lightThemeBackgroundColor",
-    "value" : "@android:color/white"
-  } ]
-}, {
   "patchName" : "Custom branding",
   "options" : [ {
     "key" : "appName",
@@ -38,16 +14,19 @@
     "value" : "ReVanced*Logo"
   } ]
 }, {
-  "patchName" : "Premium heading",
+  "patchName" : "Change header",
   "options" : [ {
-    "key" : "usePremiumHeading",
-    "value" : true
+    "key" : "header",
+    "value" : "ReVanced (borderless logo)"
   } ]
 }, {
-  "patchName" : "Spoof client",
+  "patchName" : "Theme",
   "options" : [ {
-    "key" : "client-id",
-    "value" : null
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
   } ]
 }, {
   "patchName" : "Custom theme",
@@ -63,5 +42,26 @@
   }, {
     "key" : "accentColorPressed",
     "value" : "#ff169c46"
+  } ]
+}, {
+  "patchName" : "Change package name",
+  "options" : [ {
+    "key" : "packageName",
+    "value" : "Default"
+  } ]
+}, {
+  "patchName" : "Spoof SIM country",
+  "options" : [ {
+    "key" : "networkCountryIso",
+    "value" : null
+  }, {
+    "key" : "simCountryIso",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Spoof client",
+  "options" : [ {
+    "key" : "client-id",
+    "value" : null
   } ]
 } ]
