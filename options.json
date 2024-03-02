@@ -5,6 +5,12 @@
     "value" : "com.mgoogle"
   } ]
 }, {
+  "patchName" : "Change header",
+  "options" : [ {
+    "key" : "header",
+    "value" : "revanced*borderless"
+  } ]
+}, {
   "patchName" : "Custom branding",
   "options" : [ {
     "key" : "appName",
@@ -14,12 +20,6 @@
     "value" : "ReVanced*Logo"
   } ]
 }, {
-  "patchName" : "Change header",
-  "options" : [ {
-    "key" : "header",
-    "value" : "ReVanced (borderless logo)"
-  } ]
-}, {
   "patchName" : "Theme",
   "options" : [ {
     "key" : "darkThemeBackgroundColor",
@@ -27,21 +27,6 @@
   }, {
     "key" : "lightThemeBackgroundColor",
     "value" : "@android:color/white"
-  } ]
-}, {
-  "patchName" : "Custom theme",
-  "options" : [ {
-    "key" : "backgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "backgroundColorSecondary",
-    "value" : "#ff282828"
-  }, {
-    "key" : "accentColor",
-    "value" : "#ff1ed760"
-  }, {
-    "key" : "accentColorPressed",
-    "value" : "#ff169c46"
   } ]
 }, {
   "patchName" : "Change package name",
@@ -63,5 +48,20 @@
   "options" : [ {
     "key" : "client-id",
     "value" : null
+  } ]
+}, {
+  "patchName" : "Custom theme",
+  "options" : [ {
+    "key" : "backgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "backgroundColorSecondary",
+    "value" : "#ff282828"
+  }, {
+    "key" : "accentColor",
+    "value" : "#ff1ed760"
+  }, {
+    "key" : "accentColorPressed",
+    "value" : "#ff169c46"
   } ]
 } ]
