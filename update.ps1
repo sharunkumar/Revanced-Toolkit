@@ -4,7 +4,7 @@
 # load the curent patches
 $old_patches = Get-Content .\revanced\patches.json | ConvertFrom-Json
 
-Get-AssetFile "https://api.github.com/repos/revanced/revanced-cli/releases/latest" "*-all.jar" "revanced\revanced-cli.jar"
+Get-AssetFile "https://api.github.com/repos/revanced/revanced-cli/releases/tags/v4.4.1" "*-all.jar" "revanced\revanced-cli.jar"
 Get-AssetFile "https://api.github.com/repos/revanced/revanced-patches/releases/latest" "*.jar" "revanced\revanced-patches.jar"
 Get-AssetFile "https://api.github.com/repos/revanced/revanced-patches/releases/latest" "*.json" "revanced\patches.json"
 Get-AssetFile "https://api.github.com/repos/revanced/revanced-integrations/releases/latest" "*.apk" "revanced\integrations.apk"
