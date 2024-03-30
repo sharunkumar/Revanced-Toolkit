@@ -22,6 +22,11 @@ $keystoreParam = ("--alias=alias", "--keystore-entry-password=ReVanced", "--keys
 
 java.exe -jar .\revanced\revanced-cli.jar patch -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore -r "$env:TEMP\Revanced" $keystoreParam $includesParam $excludesParam ".\apk\$AppName.apk"
 
+if($LASTEXITCODE -ne 0) {
+    Write-Host -ForegroundColor Red "Patch Failed. Exit Code: $LASTEXITCODE"
+    Exit $LASTEXITCODE
+}
+
 if ($Install) {
     adb.exe install --user $ForUser ".\apk\$AppName-patched.apk"
 }
