@@ -20,7 +20,7 @@ $includesParam = ($Includes | ForEach-Object { "--include=$_" })
 $excludesParam = ($Excludes | ForEach-Object { "--exclude=$_" })
 $keystoreParam = ("--alias=alias", "--keystore-entry-password=ReVanced", "--keystore-password=ReVanced")
 
-java.exe -jar .\revanced\revanced-cli.jar patch -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore -r "$env:TEMP\Revanced" $keystoreParam $includesParam $excludesParam ".\apk\$AppName.apk"
+java.exe -jar .\revanced\revanced-cli.jar patch -o ".\apk\$AppName-patched.apk" -b .\revanced\revanced-patches.jar -m .\revanced\integrations.apk --keystore .\revanced\revanced.keystore -t "$env:TEMP\Revanced" $keystoreParam $includesParam $excludesParam ".\apk\$AppName.apk"
 
 if($LASTEXITCODE -ne 0) {
     Write-Host -ForegroundColor Red "Patch Failed. Exit Code: $LASTEXITCODE"
