@@ -1,55 +1,4 @@
 [ {
-  "patchName" : "GmsCore support",
-  "options" : [ {
-    "key" : "gmsCoreVendor",
-    "value" : "com.mgoogle"
-  } ]
-}, {
-  "patchName" : "Change header",
-  "options" : [ {
-    "key" : "header",
-    "value" : "revanced*borderless"
-  } ]
-}, {
-  "patchName" : "Custom branding",
-  "options" : [ {
-    "key" : "appName",
-    "value" : "YouTube ReVanced"
-  }, {
-    "key" : "iconPath",
-    "value" : "ReVanced*Logo"
-  } ]
-}, {
-  "patchName" : "Theme",
-  "options" : [ {
-    "key" : "darkThemeBackgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "lightThemeBackgroundColor",
-    "value" : "@android:color/white"
-  } ]
-}, {
-  "patchName" : "Change package name",
-  "options" : [ {
-    "key" : "packageName",
-    "value" : "Default"
-  } ]
-}, {
-  "patchName" : "Spoof SIM country",
-  "options" : [ {
-    "key" : "networkCountryIso",
-    "value" : null
-  }, {
-    "key" : "simCountryIso",
-    "value" : null
-  } ]
-}, {
-  "patchName" : "Spoof client",
-  "options" : [ {
-    "key" : "client-id",
-    "value" : null
-  } ]
-}, {
   "patchName" : "Custom theme",
   "options" : [ {
     "key" : "backgroundColor",
@@ -63,5 +12,56 @@
   }, {
     "key" : "accentColorPressed",
     "value" : "#ff169c46"
+  } ]
+}, {
+  "patchName" : "Theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
+  } ]
+}, {
+  "patchName" : "Custom branding",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "YouTube ReVanced"
+  }, {
+    "key" : "iconPath",
+    "value" : "ReVanced*Logo"
+  } ]
+}, {
+  "patchName" : "Change header",
+  "options" : [ {
+    "key" : "header",
+    "value" : "revanced*borderless"
+  } ]
+}, {
+  "patchName" : "GmsCore support",
+  "options" : [ {
+    "key" : "gmsCoreVendorGroupId",
+    "value" : "app.revanced"
+  } ]
+}, {
+  "patchName" : "Spoof client",
+  "options" : [ {
+    "key" : "client-id",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Spoof SIM country",
+  "options" : [ {
+    "key" : "networkCountryIso",
+    "value" : null
+  }, {
+    "key" : "simCountryIso",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Change package name",
+  "options" : [ {
+    "key" : "packageName",
+    "value" : "Default"
   } ]
 } ]
