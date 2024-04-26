@@ -1,17 +1,35 @@
 [ {
-  "patchName" : "Custom theme",
+  "patchName" : "Spoof client",
   "options" : [ {
-    "key" : "backgroundColor",
-    "value" : "@android:color/black"
+    "key" : "client-id",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Hex",
+  "options" : [ {
+    "key" : "replacements",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Change package name",
+  "options" : [ {
+    "key" : "packageName",
+    "value" : "Default"
+  } ]
+}, {
+  "patchName" : "Spoof SIM country",
+  "options" : [ {
+    "key" : "networkCountryIso",
+    "value" : null
   }, {
-    "key" : "backgroundColorSecondary",
-    "value" : "#ff282828"
-  }, {
-    "key" : "accentColor",
-    "value" : "#ff1ed760"
-  }, {
-    "key" : "accentColorPressed",
-    "value" : "#ff169c46"
+    "key" : "simCountryIso",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "GmsCore support",
+  "options" : [ {
+    "key" : "gmsCoreVendorGroupId",
+    "value" : "app.revanced"
   } ]
 }, {
   "patchName" : "Theme",
@@ -38,30 +56,18 @@
     "value" : "revanced*borderless"
   } ]
 }, {
-  "patchName" : "GmsCore support",
+  "patchName" : "Custom theme",
   "options" : [ {
-    "key" : "gmsCoreVendorGroupId",
-    "value" : "app.revanced"
-  } ]
-}, {
-  "patchName" : "Spoof client",
-  "options" : [ {
-    "key" : "client-id",
-    "value" : null
-  } ]
-}, {
-  "patchName" : "Spoof SIM country",
-  "options" : [ {
-    "key" : "networkCountryIso",
-    "value" : null
+    "key" : "backgroundColor",
+    "value" : "@android:color/black"
   }, {
-    "key" : "simCountryIso",
-    "value" : null
-  } ]
-}, {
-  "patchName" : "Change package name",
-  "options" : [ {
-    "key" : "packageName",
-    "value" : "Default"
+    "key" : "backgroundColorSecondary",
+    "value" : "#ff282828"
+  }, {
+    "key" : "accentColor",
+    "value" : "#ff1ed760"
+  }, {
+    "key" : "accentColorPressed",
+    "value" : "#ff169c46"
   } ]
 } ]
