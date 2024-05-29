@@ -1,20 +1,41 @@
 [ {
-  "patchName" : "Spoof client",
+  "patchName" : "Spoof Android device ID",
   "options" : [ {
-    "key" : "client-id",
-    "value" : null
+    "key" : "android-device-id",
+    "value" : "0011223344556677"
   } ]
 }, {
-  "patchName" : "Hex",
+  "patchName" : "Custom theme",
   "options" : [ {
-    "key" : "replacements",
-    "value" : null
+    "key" : "backgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "backgroundColorSecondary",
+    "value" : "#ff282828"
+  }, {
+    "key" : "accentColor",
+    "value" : "#ff1ed760"
+  }, {
+    "key" : "accentColorPressed",
+    "value" : "#ff169c46"
+  } ]
+}, {
+  "patchName" : "GmsCore support",
+  "options" : [ {
+    "key" : "gmsCoreVendorGroupId",
+    "value" : "app.revanced"
   } ]
 }, {
   "patchName" : "Change package name",
   "options" : [ {
     "key" : "packageName",
     "value" : "Default"
+  } ]
+}, {
+  "patchName" : "Hex",
+  "options" : [ {
+    "key" : "replacements",
+    "value" : null
   } ]
 }, {
   "patchName" : "Spoof SIM country",
@@ -24,21 +45,6 @@
   }, {
     "key" : "simCountryIso",
     "value" : null
-  } ]
-}, {
-  "patchName" : "GmsCore support",
-  "options" : [ {
-    "key" : "gmsCoreVendorGroupId",
-    "value" : "app.revanced"
-  } ]
-}, {
-  "patchName" : "Theme",
-  "options" : [ {
-    "key" : "darkThemeBackgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "lightThemeBackgroundColor",
-    "value" : "@android:color/white"
   } ]
 }, {
   "patchName" : "Custom branding",
@@ -56,18 +62,18 @@
     "value" : "revanced*borderless"
   } ]
 }, {
-  "patchName" : "Custom theme",
+  "patchName" : "Theme",
   "options" : [ {
-    "key" : "backgroundColor",
+    "key" : "darkThemeBackgroundColor",
     "value" : "@android:color/black"
   }, {
-    "key" : "backgroundColorSecondary",
-    "value" : "#ff282828"
-  }, {
-    "key" : "accentColor",
-    "value" : "#ff1ed760"
-  }, {
-    "key" : "accentColorPressed",
-    "value" : "#ff169c46"
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
+  } ]
+}, {
+  "patchName" : "Spoof client",
+  "options" : [ {
+    "key" : "client-id",
+    "value" : null
   } ]
 } ]
