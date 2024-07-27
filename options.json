@@ -1,59 +1,14 @@
 [ {
-  "patchName" : "Change version code",
-  "options" : [ {
-    "key" : "versionCode",
-    "value" : 2147483647
-  } ]
-}, {
-  "patchName" : "Hex",
-  "options" : [ {
-    "key" : "replacements",
-    "value" : null
-  } ]
-}, {
-  "patchName" : "Change package name",
-  "options" : [ {
-    "key" : "packageName",
-    "value" : "Default"
-  } ]
-}, {
-  "patchName" : "Spoof SIM country",
-  "options" : [ {
-    "key" : "networkCountryIso",
-    "value" : null
-  }, {
-    "key" : "simCountryIso",
-    "value" : null
-  } ]
-}, {
   "patchName" : "GmsCore support",
   "options" : [ {
     "key" : "gmsCoreVendorGroupId",
     "value" : "app.revanced"
   } ]
 }, {
-  "patchName" : "Theme",
+  "patchName" : "Spoof client",
   "options" : [ {
-    "key" : "darkThemeBackgroundColor",
-    "value" : "@android:color/black"
-  }, {
-    "key" : "lightThemeBackgroundColor",
-    "value" : "@android:color/white"
-  } ]
-}, {
-  "patchName" : "Change header",
-  "options" : [ {
-    "key" : "header",
-    "value" : "revanced*borderless"
-  } ]
-}, {
-  "patchName" : "Custom branding",
-  "options" : [ {
-    "key" : "appName",
-    "value" : "YouTube ReVanced"
-  }, {
-    "key" : "iconPath",
-    "value" : "ReVanced*Logo"
+    "key" : "client-id",
+    "value" : null
   } ]
 }, {
   "patchName" : "Custom theme",
@@ -77,9 +32,54 @@
     "value" : "0011223344556677"
   } ]
 }, {
-  "patchName" : "Spoof client",
+  "patchName" : "Change package name",
   "options" : [ {
-    "key" : "client-id",
+    "key" : "packageName",
+    "value" : "Default"
+  } ]
+}, {
+  "patchName" : "Change version code",
+  "options" : [ {
+    "key" : "versionCode",
+    "value" : 2147483647
+  } ]
+}, {
+  "patchName" : "Hex",
+  "options" : [ {
+    "key" : "replacements",
     "value" : null
+  } ]
+}, {
+  "patchName" : "Spoof SIM country",
+  "options" : [ {
+    "key" : "networkCountryIso",
+    "value" : null
+  }, {
+    "key" : "simCountryIso",
+    "value" : null
+  } ]
+}, {
+  "patchName" : "Change header",
+  "options" : [ {
+    "key" : "header",
+    "value" : "revanced*borderless"
+  } ]
+}, {
+  "patchName" : "Custom branding",
+  "options" : [ {
+    "key" : "appName",
+    "value" : "YouTube ReVanced"
+  }, {
+    "key" : "iconPath",
+    "value" : "ReVanced*Logo"
+  } ]
+}, {
+  "patchName" : "Theme",
+  "options" : [ {
+    "key" : "darkThemeBackgroundColor",
+    "value" : "@android:color/black"
+  }, {
+    "key" : "lightThemeBackgroundColor",
+    "value" : "@android:color/white"
   } ]
 } ]
