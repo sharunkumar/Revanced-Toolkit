@@ -26,6 +26,15 @@
     "value" : "@android:color/white"
   } ]
 }, {
+  "patchName" : "Hide Shorts components",
+  "options" : [ {
+    "key" : "hideShortsAppShortcut",
+    "value" : false
+  }, {
+    "key" : "hideShortsWidget",
+    "value" : false
+  } ]
+}, {
   "patchName" : "Change header",
   "options" : [ {
     "key" : "header",
