@@ -2,4 +2,4 @@ java.exe -jar .\revanced\revanced-cli.jar options --overwrite .\revanced\revance
 
 git --no-pager diff .\options.json
 
-git add options.json && git commit -m "chore: Update Options" && git push
+git add options.json && git commit -m "chore: update options" && git push
