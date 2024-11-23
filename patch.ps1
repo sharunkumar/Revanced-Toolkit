@@ -22,8 +22,7 @@ $keystoreParam = ("--keystore-entry-alias=alias", "--keystore-entry-password=ReV
 
 java.exe -jar .\revanced\revanced-cli.jar patch `
     --out ".\apk\$AppName-patched.apk" `
-    --patch-bundle .\revanced\revanced-patches.jar `
-    --merge .\revanced\integrations.apk `
+    --patches .\revanced\revanced-patches.rvp `
     --keystore .\revanced\revanced.keystore `
     --temporary-files-path "$env:TEMP\Revanced" $keystoreParam $includesParam $excludesParam `
     ".\apk\$AppName.apk"
