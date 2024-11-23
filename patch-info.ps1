@@ -15,8 +15,24 @@ param (
     [Parameter()] [switch] $ApkPure,
     [Parameter()] [switch] $Versions,
     [Parameter()] [switch] $VersionAgnostic,
+    [Parameter()] [switch] $ListVersions,
+    [Parameter()] [switch] $ListPatches,
     [Parameter()] [switch] $Raw
 )
+
+$PackageFilter = ""
+
+if ($AppId -ne "") {
+    $PackageFilter = @("-f", $AppId, "--with-universal-patches=false")
+}
+
+if ($ListVersions) {
+    return java -jar .\revanced\revanced-cli.jar list-versions $PackageFilter .\revanced\revanced-patches.rvp
+}
+
+if ($ListPatches) {
+    return java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter .\revanced\revanced-patches.rvp
+}
 
 if ($AppId -eq "") {
     return Get-Content .\revanced\patches.json | ConvertFrom-Json | ForEach-Object { $_.compatiblePackages.name } | Sort-Object | Get-Unique
