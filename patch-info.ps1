@@ -23,7 +23,7 @@ param (
 $PackageFilter = ""
 
 if ($AppId -ne "") {
-    $PackageFilter = @("-f", $AppId, "--with-universal-patches=false")
+    $PackageFilter = @("--filter-package-names", $AppId)
 }
 
 if ($ListVersions) {
