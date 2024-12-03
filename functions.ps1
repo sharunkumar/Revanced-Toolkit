@@ -27,7 +27,7 @@ function Get-LogPatch($patches) {
     } | Sort-Object
 }
 
-if ($MyInvocation.ScriptName.Length -eq 0) {
-    # The script is being executed as the main entry point
-    Get-LogPatch (Get-Content .\revanced\patches.json | ConvertFrom-Json)
-}
+# if ($MyInvocation.ScriptName.Length -eq 0) {
+#     # The script is being executed as the main entry point
+#     Get-LogPatch (Get-Content .\revanced\patches.json | ConvertFrom-Json)
+# }
