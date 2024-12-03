@@ -23,7 +23,7 @@ param (
 $PackageFilter = ""
 
 if ($AppId -ne "") {
-    $PackageFilter = @("-f", $AppId, "--with-universal-patches=false")
+    $PackageFilter = @("-f", $AppId)
 }
 
 if ($ListVersions) {
@@ -31,7 +31,7 @@ if ($ListVersions) {
 }
 
 if ($ListPatches) {
-    return java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter .\revanced\revanced-patches.rvp
+    return java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false .\revanced\revanced-patches.rvp
 }
 
 if ($AppId -eq "") {
