@@ -27,7 +27,6 @@ function Get-LogPatch($patches) {
     } | Sort-Object
 }
 
-# if ($MyInvocation.ScriptName.Length -eq 0) {
-#     # The script is being executed as the main entry point
-#     Get-LogPatch (Get-Content .\revanced\patches.json | ConvertFrom-Json)
-# }
+function Save-PatchesInfo($fileName) {
+    java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options=false --with-packages --with-versions --with-universal-patches .\revanced\revanced-patches.rvp > $fileName
+}
