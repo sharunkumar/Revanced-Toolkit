@@ -9,11 +9,8 @@ param (
     [Parameter()] [switch] $PlayStore,
     [Parameter()] [switch] $ApkMirror,
     [Parameter()] [switch] $ApkPure,
-    [Parameter()] [switch] $Versions,
-    [Parameter()] [switch] $VersionAgnostic,
     [Parameter()] [switch] $ListVersions,
-    [Parameter()] [switch] $ListPatches,
-    [Parameter()] [switch] $Raw
+    [Parameter()] [switch] $ListPatches
 )
 
 $PackageFilter = ""
