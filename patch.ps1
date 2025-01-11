@@ -13,8 +13,7 @@ param (
 
 if (Test-Path ".\apk\$AppName.apkm") {
     Write-Output "Apkm detected, converting to apk"
-    Remove-Item ".\apk\$AppName.apk" -ErrorAction SilentlyContinue
-    java -jar .\revanced\apkeditor.jar m -i ".\apk\$AppName.apkm" -o ".\apk\$AppName.apk"
+    java -jar .\revanced\apkeditor.jar m -f -i ".\apk\$AppName.apkm" -o ".\apk\$AppName.apk"
 }
 
 if (-not (Test-Path ".\apk\$AppName.apk")) {
