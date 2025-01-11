@@ -1,14 +1,9 @@
 [CmdletBinding()]
 param (
     [Parameter(Mandatory = $true)]
-    [ValidateScript(
-        { $_ -in (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" }) },
-        ErrorMessage = 'invalid app name. make sure the apk in in the .\apk folder'
-    )]
     [ArgumentCompleter({ param($cmd, $param, $wordToComplete)
-            # This is the duplicated part of the code in the [ValidateScipt] attribute.
-            [array] $validValues = (Get-ChildItem -Path .\apk\ -Filter "*.apk" | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" })
-            $validValues -like "*$wordToComplete*"
+            [array] $validValues = (Get-ChildItem -Path .\apk\ -Filter "*.apk*" | Where-Object { $_.Extension -in ".apk", ".apkm" } | ForEach-Object { $_.BaseName } | Where-Object { $_ -notlike "*-patched" })
+            return $validValues -like "*$wordToComplete*"
         })] [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
     [Parameter()] [string[]] $Excludes = @(),
@@ -16,11 +11,22 @@ param (
     [Parameter()] [int] $ForUser = 0
 )
 
+if (Test-Path ".\apk\$AppName.apkm") {
+    Write-Output "Apkm detected, converting to apk"
+    Remove-Item ".\apk\$AppName.apk" -ErrorAction SilentlyContinue
+    java -jar .\revanced\apkeditor.jar m -i ".\apk\$AppName.apkm" -o ".\apk\$AppName.apk"
+}
+
+if (-not (Test-Path ".\apk\$AppName.apk")) {
+    Write-Host -ForegroundColor Red ".\apk\$AppName.apk"
+    Exit 1
+}
+
 $includesParam = ($Includes | ForEach-Object { "--include=$_" })
 $excludesParam = ($Excludes | ForEach-Object { "--exclude=$_" })
 $keystoreParam = ("--keystore-entry-alias=alias", "--keystore-entry-password=ReVanced", "--keystore-password=ReVanced")
 
-java.exe -jar .\revanced\revanced-cli.jar patch `
+java -jar .\revanced\revanced-cli.jar patch `
     --out ".\apk\$AppName-patched.apk" `
     --patches .\revanced\revanced-patches.rvp `
     --keystore .\revanced\revanced.keystore `
@@ -33,5 +39,5 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 if ($Install) {
-    adb.exe install --user $ForUser ".\apk\$AppName-patched.apk"
+    adb install --user $ForUser ".\apk\$AppName-patched.apk"
 }
