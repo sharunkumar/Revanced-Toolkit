@@ -18,7 +18,7 @@ if (Test-Path ".\apk\$AppName.apkm") {
 }
 
 if (-not (Test-Path ".\apk\$AppName.apk")) {
-    Write-Host -ForegroundColor Red ".\apk\$AppName.apk"
+    Write-Host -ForegroundColor Red "Not Found: .\apk\$AppName.apk"
     Exit 1
 }
 
