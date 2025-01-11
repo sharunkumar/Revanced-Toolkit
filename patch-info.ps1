@@ -2,8 +2,8 @@
 param (
     [Parameter()] 
     [ArgumentCompleter({ param($cmd, $param, $wordToComplete)
-            # same as $AppId = ""; TODO: dump app ids to a file on update maybe?
-            [array] $validValues = (java -jar .\revanced\revanced-cli.jar list-versions .\revanced\revanced-patches.rvp | Where-Object { $_ -like "Package name:*" } | ForEach-Object { $_.Split(": ")[1] } | Sort-Object | Get-Unique)
+            # same as $AppId -eq ""
+            [array] $validValues = (Get-Content .\revanced\patches.new.txt | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] })
             $validValues -like "*$wordToComplete*"
         })] [string] $AppId,
     [Parameter()] [switch] $PlayStore,
@@ -31,7 +31,7 @@ if ($ListPatches) {
 }
 
 if ($AppId -eq "") {
-    return java -jar .\revanced\revanced-cli.jar list-versions .\revanced\revanced-patches.rvp | Where-Object { $_ -like "Package name:*" } | ForEach-Object { $_.Split(": ")[1] } | Sort-Object | Get-Unique
+    return Get-Content .\revanced\patches.new.txt | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] }
 }
 
 if ($PlayStore) {
