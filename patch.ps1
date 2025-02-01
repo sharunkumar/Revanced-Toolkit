@@ -7,6 +7,8 @@ param (
         })] [string] $AppName,
     [Parameter()] [string[]] $Includes = @(),
     [Parameter()] [string[]] $Excludes = @(),
+    [Parameter()] [string[]] $Options = @(),
+    [Parameter()] [string[]] $Enable = @(),
     [Parameter()] [switch] $Install,
     [Parameter()] [int] $ForUser = 0
 )
@@ -24,12 +26,14 @@ if (-not (Test-Path ".\apk\$AppName.apk")) {
 $includesParam = ($Includes | ForEach-Object { "--include=$_" })
 $excludesParam = ($Excludes | ForEach-Object { "--exclude=$_" })
 $keystoreParam = ("--keystore-entry-alias=alias", "--keystore-entry-password=ReVanced", "--keystore-password=ReVanced")
+$optionsParam = ($Options | ForEach-Object { "-O$_" })
+$enableParam = ($Options | ForEach-Object { "--enable=$_" })
 
 java -jar .\revanced\revanced-cli.jar patch `
     --out ".\apk\$AppName-patched.apk" `
     --patches .\revanced\revanced-patches.rvp `
     --keystore .\revanced\revanced.keystore `
-    --temporary-files-path "$env:TEMP\Revanced" $keystoreParam $includesParam $excludesParam `
+    --temporary-files-path "$env:TEMP\Revanced" $keystoreParam $enableParam $optionsParam $includesParam $excludesParam `
     ".\apk\$AppName.apk"
 
 if ($LASTEXITCODE -ne 0) {
