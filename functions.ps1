@@ -29,5 +29,5 @@ function Get-LogPatch($patches) {
 }
 
 function Save-PatchesInfo($fileName) {
-    java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options=false --with-packages --with-versions --with-universal-patches .\revanced\revanced-patches.rvp > $fileName
+    java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --with-descriptions --index=false --with-options=false --with-packages --with-versions --with-universal-patches (Join-Path "." "revanced" "revanced-patches.rvp") > $fileName
 }
