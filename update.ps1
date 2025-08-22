@@ -1,13 +1,13 @@
 #!/usr/bin/env pwsh
 # load functions
-. .\functions.ps1
+. (Join-Path "." "functions.ps1")
 
-Save-PatchesInfo "revanced\patches.old.txt"
+Save-PatchesInfo (Join-Path "revanced" "patches.old.txt")
 
-Get-AssetFile "https://api.github.com/repos/revanced/revanced-cli/releases/latest" "*-all.jar" "revanced\revanced-cli.jar"
-Get-AssetFile "https://api.github.com/repos/revanced/revanced-patches/releases/latest" "*.rvp" "revanced\revanced-patches.rvp"
-Get-AssetFile "https://api.github.com/repos/REAndroid/APKEditor/releases/latest" "*.jar" "revanced\apkeditor.jar"
+Get-AssetFile "https://api.github.com/repos/revanced/revanced-cli/releases/latest" "*-all.jar" (Join-Path "revanced" "revanced-cli.jar")
+Get-AssetFile "https://api.github.com/repos/revanced/revanced-patches/releases/latest" "*.rvp" (Join-Path "revanced" "revanced-patches.rvp")
+Get-AssetFile "https://api.github.com/repos/REAndroid/APKEditor/releases/latest" "*.jar" (Join-Path "revanced" "apkeditor.jar")
 
-Save-PatchesInfo "revanced\patches.new.txt"
+Save-PatchesInfo (Join-Path "revanced" "patches.new.txt")
 
-delta "revanced\patches.old.txt" "revanced\patches.new.txt"
+delta (Join-Path "revanced" "patches.old.txt") (Join-Path "revanced" "patches.new.txt")

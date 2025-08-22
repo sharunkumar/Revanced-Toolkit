@@ -4,7 +4,7 @@ param (
     [Parameter()] 
     [ArgumentCompleter({ param($cmd, $param, $wordToComplete)
             # same as $AppId -eq ""
-            [array] $validValues = (Get-Content .\revanced\patches.new.txt | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] })
+            [array] $validValues = (Get-Content (Join-Path "." "revanced" "patches.new.txt") | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] })
             $validValues -like "*$wordToComplete*"
         })] [string] $AppId,
     [Parameter()] [switch] $PlayStore,
@@ -21,15 +21,17 @@ if ($AppId -ne "") {
 }
 
 if ($ListVersions) {
-    return java -jar .\revanced\revanced-cli.jar list-versions $PackageFilter .\revanced\revanced-patches.rvp
+    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-versions $PackageFilter (Join-Path "." "revanced" "revanced-patches.rvp")
 }
 
 if ($ListPatches) {
-    return java -jar .\revanced\revanced-cli.jar list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false .\revanced\revanced-patches.rvp
+        return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false (Join-Path "." "revanced" "revanced-patches.rvp")
 }
 
 if ($AppId -eq "") {
-    return Get-Content .\revanced\patches.new.txt | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] }
+    if ($AppId -eq "") {
+    return Get-Content (Join-Path "." "revanced" "patches.new.txt") | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] }
+}
 }
 
 if ($PlayStore) {
