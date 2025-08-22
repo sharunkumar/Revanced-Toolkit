@@ -1,3 +1,4 @@
+#!/usr/bin/env pwsh
 # load functions
 . .\functions.ps1
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env pwsh
 function Get-AssetFile($url, $pattern, $fileName) {
     $release = Invoke-RestMethod -Uri $url
     Get-LatestAsset $release $pattern | ForEach-Object {
