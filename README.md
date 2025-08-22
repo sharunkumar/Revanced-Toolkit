@@ -14,6 +14,16 @@ This script updates the Revanced CLI, patches, and APK Editor to their latest ve
 .\update.ps1
 ```
 
+### setup.ps1
+
+This script creates the `revanced.keystore` file required for signing the patched APK. You only need to run this once.
+
+#### Usage
+
+```powershell
+.\update.ps1
+```
+
 ### patch.ps1
 
 This script patches an APK or APKM file using the Revanced CLI.

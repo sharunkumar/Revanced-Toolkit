@@ -14,6 +14,11 @@ param (
     [Parameter()] [int] $ForUser = 0
 )
 
+if (-not (Test-Path (Join-Path "." "revanced" "revanced.keystore"))) {
+    Write-Host -ForegroundColor Red "Keystore not found. Please run .\setup.ps1 to create it."
+    Exit 1
+}
+
 if (Test-Path (Join-Path "." "apk" "$AppName.apkm")) {
     Write-Output "Apkm detected, converting to apk"
     java -jar (Join-Path "." "revanced" "apkeditor.jar") m -f -i (Join-Path "." "apk" "$AppName.apkm") -o (Join-Path "." "apk" "$AppName.apk")
