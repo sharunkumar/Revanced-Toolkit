@@ -18,7 +18,7 @@ catch {
 }
 
 # The -dname parameter provides the details non-interactively.
-keytool -genkeypair -v -keystore $keystorePath -alias "alias" -keypass "ReVanced" -storepass "ReVanced" -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=ReVanced, OU=ReVanced, O=ReVanced, L=ReVanced, S=ReVanced, C=RV"
+keytool -genkeypair -v -keystore $keystorePath -alias "alias" -keypass "ReVanced" -storepass "ReVanced" -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=ReVanced, OU=ReVanced, O=ReVanced, L=ReVanced, S=ReVanced, C=RV" -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -providerpath (Join-Path "." "revanced" "revanced-cli.jar")
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host -ForegroundColor Green "Keystore created successfully at $keystorePath"
