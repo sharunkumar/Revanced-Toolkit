@@ -35,7 +35,7 @@ java -jar (Join-Path "." "revanced" "revanced-cli.jar") patch `
     --patches (Join-Path "." "revanced" "revanced-patches.rvp") `
     --keystore (Join-Path "." "revanced" "revanced.keystore") `
     --temporary-files-path (Join-Path $env:TEMP "Revanced") $keystoreParam $enableParam $optionsParam $includesParam $excludesParam `
-    (Join-Path "." "apk" "$AppName.apk")
+(Join-Path "." "apk" "$AppName.apk")
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host -ForegroundColor Red "Patch Failed. Exit Code: $LASTEXITCODE"

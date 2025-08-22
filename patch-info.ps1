@@ -25,13 +25,13 @@ if ($ListVersions) {
 }
 
 if ($ListPatches) {
-        return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false (Join-Path "." "revanced" "revanced-patches.rvp")
+    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false (Join-Path "." "revanced" "revanced-patches.rvp")
 }
 
 if ($AppId -eq "") {
     if ($AppId -eq "") {
-    return Get-Content (Join-Path "." "revanced" "patches.new.txt") | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] }
-}
+        return Get-Content (Join-Path "." "revanced" "patches.new.txt") | Where-Object { $_ -like "*Package name:*" } | Sort-Object | Get-Unique | ForEach-Object { $_.split(": ")[1] }
+    }
 }
 
 if ($PlayStore) {
