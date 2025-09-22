@@ -29,8 +29,8 @@ if (-not (Test-Path (Join-Path "." "apk" "$AppName.apk"))) {
     Exit 1
 }
 
-$includesParam = ($Includes | ForEach-Object { "--enable=`"$_`"" })
-$excludesParam = ($Excludes | ForEach-Object { "--disable=`"$_`"" })
+$includesParam = ($Includes | ForEach-Object { "--enable=$_" })
+$excludesParam = ($Excludes | ForEach-Object { "--disable=$_" })
 $keystoreParam = ("--keystore-entry-alias=alias", "--keystore-entry-password=ReVanced", "--keystore-password=ReVanced")
 $optionsParam = ($Options | ForEach-Object { "-O$_" })
 $enableParam = ($Options | ForEach-Object { "--enable=$_" })
