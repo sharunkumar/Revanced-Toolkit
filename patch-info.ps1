@@ -16,16 +16,22 @@ param (
 
 $PackageFilter = ""
 
+$PatchesArgs = @("--bypass-verification", "-p", (Join-Path "." "revanced" "revanced-patches.rvp"))
+
 if ($AppId -ne "") {
-    $PackageFilter = @("-f", $AppId)
+    if($ListVersions) {
+        $PackageFilter = @("--filter-package-names", $AppId)
+    } elseif ($ListPatches) {
+        $PackageFilter = @("--filter-package-name", $AppId)
+    }
 }
 
 if ($ListVersions) {
-    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-versions $PackageFilter (Join-Path "." "revanced" "revanced-patches.rvp")
+    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-versions $PackageFilter $PatchesArgs
 }
 
 if ($ListPatches) {
-    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --with-descriptions --index=false --with-options --with-packages --with-versions $PackageFilter --with-universal-patches=false (Join-Path "." "revanced" "revanced-patches.rvp")
+    return java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --descriptions --index=false --options --packages --versions $PackageFilter --universal-patches=false $PatchesArgs
 }
 
 if ($AppId -eq "") {

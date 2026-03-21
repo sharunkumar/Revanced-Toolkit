@@ -37,6 +37,7 @@ $enableParam = ($Options | ForEach-Object { "--enable=$_" })
 
 java -jar (Join-Path "." "revanced" "revanced-cli.jar") patch `
     --out (Join-Path "." "apk" "$AppName-patched.apk") `
+    --bypass-verification `
     --patches (Join-Path "." "revanced" "revanced-patches.rvp") `
     --keystore (Join-Path "." "revanced" "revanced.keystore") `
     --temporary-files-path (Join-Path ([System.IO.Path]::GetTempPath()) "Revanced") $keystoreParam $enableParam $optionsParam $includesParam $excludesParam `
