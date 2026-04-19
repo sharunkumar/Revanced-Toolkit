@@ -28,6 +28,11 @@ function Get-LogPatch($patches) {
     } | Sort-Object
 }
 
+function Get-RevancedPatchesFile($url, $fileName) {
+    $response = Invoke-RestMethod -Uri $url
+    Invoke-WebRequest -Uri $response.download_url -OutFile $fileName
+}
+
 function Save-PatchesInfo($fileName) {
     java -jar (Join-Path "." "revanced" "revanced-cli.jar") list-patches --descriptions --index=false --options=false --packages --versions --universal-patches --bypass-verification --patches (Join-Path "." "revanced" "revanced-patches.rvp") > $fileName
 }
